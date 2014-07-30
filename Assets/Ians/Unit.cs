@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Unit : MonoBehaviour {
 
+    public enum Team { Racoons, Cats };
+    public Team team;
+
     //public Vector3? target = null;  //nullable!
     public Vector3? target;
     //private bool movingTowardsTarget = false;
