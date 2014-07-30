@@ -13,12 +13,12 @@ public class Manager : MonoBehaviour {
     //Camera.main.ScreenToWorldPoint(Input.mousePosition )
 
     public Transform unitsSelected;
-    public Transform destinationPosition;
     private Vector3 target;
 
 	// Use this for initialization
 	void Start () {
-	
+        GameObject go = new GameObject("target");
+        target = go.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -27,6 +27,7 @@ public class Manager : MonoBehaviour {
 	    if (Input.GetMouseButtonDown(1))
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            target = new Vector3(target.x, target.y, 0);
 
             Debug.Log(target);
             //destinationPosition = 

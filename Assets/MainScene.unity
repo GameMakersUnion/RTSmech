@@ -83,8 +83,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 118479272}
   - 212: {fileID: 118479271}
-  - 61: {fileID: 118479273}
   - 114: {fileID: 118479274}
+  - 50: {fileID: 118479275}
+  - 58: {fileID: 118479276}
   m_Layer: 0
   m_Name: racoon_silhouette_side
   m_TagString: Untagged
@@ -126,17 +127,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1446579483}
   m_RootOrder: 1
---- !u!61 &118479273
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 118479270}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 2, y: 1.12}
-  m_Center: {x: 0, y: 0}
 --- !u!114 &118479274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +138,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1955dd7d18fe443a7a23a2bee8fbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: 0, y: 0, z: 0}
+--- !u!50 &118479275
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118479270}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!58 &118479276
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118479270}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: 1
+  m_Center: {x: 0, y: 0}
 --- !u!1 &245699473
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitsSelected: {fileID: 1446579483}
-  destinationPosition: {fileID: 627034484}
 --- !u!4 &245699475
 Transform:
   m_ObjectHideFlags: 0
@@ -190,33 +204,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &627034484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 627034485}
-  m_Layer: 0
-  m_Name: destinationPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &627034485
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 627034484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
 --- !u!1 &1201511168
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,8 +213,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1201511170}
   - 212: {fileID: 1201511169}
-  - 61: {fileID: 1201511171}
   - 114: {fileID: 1201511172}
+  - 50: {fileID: 1201511173}
+  - 58: {fileID: 1201511174}
   m_Layer: 0
   m_Name: racoon_silhouette_side
   m_TagString: Untagged
@@ -264,22 +252,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1201511168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.96773696, y: -2.13433361, z: 10}
+  m_LocalPosition: {x: -2.19447327, y: -3.88638639, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1446579483}
   m_RootOrder: 0
---- !u!61 &1201511171
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1201511168}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 2, y: 1.12}
-  m_Center: {x: 0, y: 0}
 --- !u!114 &1201511172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +268,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1955dd7d18fe443a7a23a2bee8fbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: 0, y: 0, z: 0}
+--- !u!50 &1201511173
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201511168}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!58 &1201511174
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201511168}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: 1
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1354953831
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,4 +539,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
