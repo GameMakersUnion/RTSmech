@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Unit : MonoBehaviour {
 
-    public Transform target;
+    public Vector3 target;
     private bool movingTowardsTarget = false;
 
     private float speed = 5f; 
@@ -22,12 +22,12 @@ public class Unit : MonoBehaviour {
         {
             //if arrives at target then { movingTowardsTarget = false; target = null; }
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, target, step);
 
         }
 	}
 
-    public void SetTarget(Transform target)
+    public void SetTarget(Vector3 target)
     {
         this.target = target;
     }

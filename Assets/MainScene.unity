@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1955dd7d18fe443a7a23a2bee8fbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
 --- !u!1 &245699473
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d6f075d39eac84ab03730e8ed266f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitsSelected: {fileID: 0}
+  unitsSelected: {fileID: 1446579483}
   destinationPosition: {fileID: 627034484}
 --- !u!4 &245699475
 Transform:
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1955dd7d18fe443a7a23a2bee8fbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1555845715}
+  target: {x: 0, y: 0, z: 0}
 --- !u!1 &1354953831
 GameObject:
   m_ObjectHideFlags: 0

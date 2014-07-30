@@ -34,7 +34,7 @@ public class Manager : MonoBehaviour {
             //iterate through all children of units Selected and send the new target
             foreach (Transform unit in unitsSelected)
             {
-
+                unit.GetComponent<Unit>().target = target;
             }
         }
 	}
