@@ -3,10 +3,14 @@ using System.Collections;
 
 public enum Team { Racoons, Cats };
 
+
 public class Unit : MonoBehaviour {
 
     public Team team;
     public bool selected = false;
+    public bool carrying = false;
+    private bool moving = false;
+    private Animator anim;
 
     //public Vector3? target = null;  //nullable!
     public Vector3? target;
@@ -22,10 +26,12 @@ public class Unit : MonoBehaviour {
         target = null;
         speed = regSpeed;
         tooClose = false;
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
+    //Vector3 v = transform.TransformPoint();
 
         //if (target != null)
         //{
@@ -34,6 +40,9 @@ public class Unit : MonoBehaviour {
         //if (movingTowardsTarget) 
         if (target != null)
         {
+            moving = true;
+            anim.SetBool("moving", moving);
+
             //if arrives at target then { movingTowardsTarget = false; target = null; }
             float step = speed * Time.deltaTime;
             float distAway = Vector3.Distance(transform.position, (Vector3)target);
@@ -49,6 +58,8 @@ public class Unit : MonoBehaviour {
             
             if (tooClose)
             {
+                moving = false;
+                anim.SetBool("moving", moving);
                 Start();
                 //movingTowardsTarget = true;
             }

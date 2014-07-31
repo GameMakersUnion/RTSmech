@@ -35,6 +35,8 @@ public class Manager : MonoBehaviour {
             //iterate through all children of units Selected and send the new target
             foreach (Transform unit in unitsSelected)
             {
+                Debug.Log(unit.name);
+
                 Unit u = unit.GetComponent<Unit>();
                 if (selectableTeam == u.team)
                 {
