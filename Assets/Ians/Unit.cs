@@ -7,7 +7,7 @@ public enum Team { Racoons, Cats };
 public class Unit : MonoBehaviour {
 
     public Team team;
-    public bool selected = false;
+    public bool Selected = false;
     public bool carrying = false;
     private bool moving = false;
     private Animator anim;
