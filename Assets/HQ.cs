@@ -29,7 +29,7 @@ public class HQ : MonoBehaviour {
             GarbagePiece g = u.garbage;
             g.needsMining = true;
             u.garbage = null;
-            //points += g.garbage;
+            points += g.points;
         }
 
         

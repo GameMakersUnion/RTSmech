@@ -8,7 +8,7 @@ public enum GarbageType { Bone,Pizza,Banana };
 public class GarbagePiece : MonoBehaviour {
 
     public GarbageType garbage;
-    public const int points = 1;
+    public int points = 1;
     public bool needsMining = false;  //for mining garbage cans and maybe stealing from other bases' HQ's.
 
 	// Use this for initialization
