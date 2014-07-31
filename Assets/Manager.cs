@@ -29,13 +29,12 @@ public class Manager : MonoBehaviour {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target = new Vector3(target.x, target.y, 0);
 
-            Debug.Log(target);
+            //Debug.Log(target);
             //destinationPosition = 
 
             //iterate through all children of units Selected and send the new target
             foreach (Transform unit in unitsSelected)
             {
-                Debug.Log(unit.name);
 
                 Unit u = unit.GetComponent<Unit>();
                 if (selectableTeam == u.team)

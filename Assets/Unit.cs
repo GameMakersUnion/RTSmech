@@ -11,6 +11,7 @@ public class Unit : MonoBehaviour {
     public bool carrying = false;
     private bool moving = false;
     private Animator anim;
+    public GarbagePiece garbage;
 
     //public Vector3? target = null;  //nullable!
     public Vector3? target;
