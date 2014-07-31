@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 public class Manager : MonoBehaviour {
 
-    //move to position
-    //control position with mouse
-    //test MoveTowards when hitting colliders in linear path
+    public Team selectableTeam;
+
     //attack
     //harvest
+
 
     //Camera.main.ScreenToWorldPoint(Input.mousePosition )
 
@@ -35,7 +35,11 @@ public class Manager : MonoBehaviour {
             //iterate through all children of units Selected and send the new target
             foreach (Transform unit in unitsSelected)
             {
-                unit.GetComponent<Unit>().target = target;
+                Unit u = unit.GetComponent<Unit>();
+                if (selectableTeam == u.team)
+                {
+                    u.target = target;
+                }
             }
         }
 	}

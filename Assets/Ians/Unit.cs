@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum Team { Racoons, Cats };
+
 public class Unit : MonoBehaviour {
 
-    public enum Team { Racoons, Cats };
     public Team team;
+    public bool selected = false;
 
     //public Vector3? target = null;  //nullable!
     public Vector3? target;
