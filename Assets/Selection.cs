@@ -8,6 +8,7 @@ public class Selection : MonoBehaviour {
 	public GameObject Holder;
 	public bool Selecting;
 	public Vector2 BoxPosition;
+	public Material Colour;
 	float x1;
 	float x2;
 	float y1;
@@ -30,7 +31,8 @@ public class Selection : MonoBehaviour {
 			Selecting=true;
 			BoxCopy=(GameObject)Instantiate(Box);
 			
-			
+		for(int i=0; i <=5; i++){
+			Holder.transform.GetChild(i).GetComponent<Unit>().Selected=false;}
 			//everything happens the one frame the mouse is pressed down
 		}
 		
@@ -44,11 +46,27 @@ public class Selection : MonoBehaviour {
 	
 		BoxCopy.transform.localScale=new Vector2(width,height);
 		BoxCopy.transform.position=BoxPosition;
+			
+			
+			
+			
+			
+		
 		}
 	
 	if(BoxCopy && Input.GetMouseButtonUp(0)){
 			Selecting=false;
+			for(int i=0; i <=5; i++){
+				GameObject Child = Holder.transform.GetChild(i).gameObject;
+				if(((Child.transform.position.x>x1 && Child.transform.position.x<x2) || 
+					(Child.transform.position.x<x1 && Child.transform.position.x>x2)) && 
+					((Child.transform.position.y>y1 && Child.transform.position.y<y2) || 
+					(Child.transform.position.y<y1 && Child.transform.position.y>y2))){
+					Child.GetComponent<Unit>().Selected=true;
+				}
+			}
 			Destroy (BoxCopy);
+			
 		}
 			
 	
