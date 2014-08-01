@@ -6,11 +6,14 @@ public enum Team { Racoons, Cats };
 
 public class Unit : MonoBehaviour {
 
+    public enum State { Idling, Moving, Mining, Hissing, Fighting }
+    public State state;
+
     public Team team;
     public bool Selected = false;
     public bool carrying = false;
-    private bool moving = false;
-    private Animator anim;
+    //private bool moving = false;
+    public Animator anim;
     public GarbagePiece garbage;
 
     //public Vector3? target = null;  //nullable!
@@ -28,6 +31,7 @@ public class Unit : MonoBehaviour {
         speed = regSpeed;
         tooClose = false;
         anim = GetComponent<Animator>();
+        state = State.Idling;
 	}
 	
 	// Update is called once per frame
@@ -41,8 +45,8 @@ public class Unit : MonoBehaviour {
         //if (movingTowardsTarget) 
         if (target != null)
         {
-            moving = true;
-            anim.SetBool("moving", moving);
+            state = State.Moving;
+            anim.SetBool("moving", true);
 
             //if arrives at target then { movingTowardsTarget = false; target = null; }
             float step = speed * Time.deltaTime;
@@ -59,8 +63,8 @@ public class Unit : MonoBehaviour {
             
             if (tooClose)
             {
-                moving = false;
-                anim.SetBool("moving", moving);
+                state = State.Idling;
+                anim.SetBool("moving", false);
                 Start();
                 //movingTowardsTarget = true;
             }

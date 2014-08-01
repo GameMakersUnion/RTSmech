@@ -26,10 +26,21 @@ public class GarbagePiece : MonoBehaviour {
         Unit u = other.gameObject.GetComponent<Unit>();
         if (u != null && u.garbage == null && !needsMining)
         {
-            Transform Mouth = other.transform.Find("Head").Find("Mouth").transform;
-            transform.position = Mouth.position;
-            transform.parent = Mouth;
-            u.garbage = this;
+            //Transform Mouth = other.transform.Find("Head").Find("Mouth").transform;
+            //transform.position = Mouth.position;
+            //transform.parent = Mouth;
+            //u.garbage = this;
+            XferGarbageOwner(transform, other.transform);
         }
+    }
+
+    //transfer
+    void XferGarbageOwner(Transform from, Transform to)
+    {
+        Transform toMouth = to.transform.Find("Head").Find("Mouth").transform;
+        from.position = toMouth.position;
+        from.parent = toMouth;
+        to.gameObject.GetComponent<Unit>().garbage = from.gameObject.GetComponent<GarbagePiece>();
+        //u.garbage = this;
     }
 }
