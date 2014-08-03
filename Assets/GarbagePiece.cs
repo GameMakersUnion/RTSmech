@@ -29,7 +29,7 @@ public class GarbagePiece : MonoBehaviour {
         //{
         //    throw new System.NullReferenceException("u");
         //} else 
-        if (u != null && u.carrying && !needsMining)
+        if (u != null && !u.carrying && !needsMining)
         {
           //  Transform Mouth = other.transform.Find("Head").Find("Mouth").transform;
           //  transform.position = Mouth.position;

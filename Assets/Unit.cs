@@ -86,7 +86,7 @@ public class Unit : MonoBehaviour {
         //right click
         if (Input.GetMouseButtonDown(1) && Selected)
         {
-            Vector3 tempTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 tempTarget = Selection.GetWorldPositionAtDepth(Input.mousePosition, 0f);
             target = new Vector3(tempTarget.x, tempTarget.y, 0);
          }
     }

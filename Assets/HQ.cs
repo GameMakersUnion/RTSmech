@@ -25,11 +25,7 @@ public class HQ : MonoBehaviour {
     {
         Unit u = other.gameObject.GetComponent<Unit>();
 
-        if (u == null)
-        {
-            throw new System.NullReferenceException("u");
-        }
-        else if (u != null && u.carrying && u.team == team)
+        if (u != null && u.carrying && u.team == team)
         {
             //Vector3 offset = new Vector3(Random.Range(2f, -2f), Random.Range(2f, -2f), 0f); 
             //u.garbage.transform.position = transform.position + offset;
