@@ -8,8 +8,9 @@ public enum GarbageType { Bone,Pizza,Banana };
 public class GarbagePiece : MonoBehaviour {
 
     public GarbageType garbage;
-    public int points = 1;
+    public const int points = 1;
     public bool needsMining = false;  //for mining garbage cans and maybe stealing from other bases' HQ's.
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,14 +25,19 @@ public class GarbagePiece : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         Unit u = other.gameObject.GetComponent<Unit>();
-        if (u != null && u.garbage == null && !needsMining)
+        //if (u == null)
+        //{
+        //    throw new System.NullReferenceException("u");
+        //} else 
+        if (u != null && u.carrying && !needsMining)
         {
-            //Transform Mouth = other.transform.Find("Head").Find("Mouth").transform;
-            //transform.position = Mouth.position;
-            //transform.parent = Mouth;
-            //u.garbage = this;
+          //  Transform Mouth = other.transform.Find("Head").Find("Mouth").transform;
+          //  transform.position = Mouth.position;
+          //  transform.parent = Mouth;
+          //  u.garbage = this;
             XferGarbageOwner(transform, other.transform);
         }
+         
     }
 
     //transfer
