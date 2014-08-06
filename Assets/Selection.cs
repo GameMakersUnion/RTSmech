@@ -39,6 +39,7 @@ public class Selection : MonoBehaviour
             for (int i = 0; i < Holder.transform.childCount; i++)
             {
                 Holder.transform.GetChild(i).GetComponent<Unit>().Selected = false;
+
             }
             //everything happens the one frame the mouse is pressed down
         }
